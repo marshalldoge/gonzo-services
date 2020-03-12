@@ -9,7 +9,8 @@ public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Integer discount_id, client_id, user_id, nit;
+    Long discountId, clientId, userId;
+    Integer nit;
     Double cost;
     LocalDateTime creation_time,expiration_time;
 
@@ -21,28 +22,20 @@ public class Loan {
         this.id = id;
     }
 
-    public Integer getDiscout_id() {
-        return discount_id;
+    public Long getDiscountId() {
+        return discountId;
     }
 
-    public void setDiscout_id(Integer discout_id) {
-        this.discount_id = discout_id;
+    public void setDiscountId(Long discountId) {
+        this.discountId = discountId;
     }
 
-    public Integer getClient_id() {
-        return client_id;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
-    public void setClient_id(Integer client_id) {
-        this.client_id = client_id;
-    }
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Integer getNit() {

@@ -9,7 +9,7 @@ public class LoanVideo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    Integer load_id, video_id;
+    Long loan_id, video_id;
 
     public Long getId() {
         return id;
@@ -19,19 +19,19 @@ public class LoanVideo {
         this.id = id;
     }
 
-    public Integer getLoad_id() {
-        return load_id;
+    public Long getLoan_id() {
+        return loan_id;
     }
 
-    public void setLoad_id(Integer load_id) {
-        this.load_id = load_id;
+    public void setLoan_id(Long loan_id) {
+        this.loan_id = loan_id;
     }
 
-    public Integer getVideo_id() {
+    public Long getVideo_id() {
         return video_id;
     }
 
-    public void setVideo_id(Integer video_id) {
+    public void setVideo_id(Long video_id) {
         this.video_id = video_id;
     }
 }
