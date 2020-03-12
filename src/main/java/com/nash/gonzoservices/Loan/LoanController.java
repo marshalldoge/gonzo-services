@@ -46,13 +46,18 @@ public class LoanController {
             //Create loan_video
             ArrayList<MovieQuantity> moviesQuantity = loanRequest.getMovieQuantities();
             for(int i = 0; i < moviesQuantity.size(); i++) {
-                for(int j = 0; j < moviesQuantity.get(i).getQuantity(); j++) {
+                for(int j = 0; j < moviesQuantity.get(i).getUsed(); j++) {
+                    //First get the video
+                    ArrayList<Video> videos = (ArrayList<Video>) videoRepository.findAllByMovieIdAndAvailable(moviesQuantity.get(i).getId(),true);
+                    Long videoId = videos.get(0).getId();
+
                     LoanVideo loanVideo = new LoanVideo();
                     loanVideo.setLoan_id(loan.getId());
-                    loanVideo.setVideo_id(moviesQuantity.get(i).getMovie_id());
+                    loanVideo.setVideo_id(videoId);
                     //Set the video to unavailable
-                    Video video = videoRepository.findById(moviesQuantity.get(i).getMovie_id()).get();
+                    Video video = videoRepository.findById(videoId).get();
                     video.setAvailable(false);
+                    videoRepository.save(video);
                 }
             }
 

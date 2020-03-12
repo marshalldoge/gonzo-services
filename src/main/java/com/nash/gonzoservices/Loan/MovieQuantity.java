@@ -1,7 +1,7 @@
 package com.nash.gonzoservices.Loan;
 
 public class MovieQuantity {
-    Long movie_id;
+    Long id;
     String name;
     Integer quantity, duration, used;
 
@@ -29,12 +29,12 @@ public class MovieQuantity {
         this.used = used;
     }
 
-    public Long getMovie_id() {
-        return movie_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setMovie_id(Long movie_id) {
-        this.movie_id = movie_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Integer getQuantity() {
