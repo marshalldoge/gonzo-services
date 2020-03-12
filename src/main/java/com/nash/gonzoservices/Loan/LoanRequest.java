@@ -6,9 +6,17 @@ import java.util.ArrayList;
 public class LoanRequest {
     Long userId, clientId;
     Double cost;
-    Integer nit;
+    Integer nit,days;
     ArrayList<MovieQuantity> movieQuantities;
     LocalDateTime expirationTime;
+
+    public Integer getDays() {
+        return days;
+    }
+
+    public void setDays(Integer days) {
+        this.days = days;
+    }
 
     public LocalDateTime getExpirationTime() {
         return expirationTime;
